@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/random/db" VERSION="20120925" COMMENT="XMLDB file for Moodle mod/random"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+      <TABLE NAME="random" COMMENT="Defines certificates">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="intro" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" />
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="emailteachers" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="emailothers" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" />
+        <FIELD NAME="savecert" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="reportcert" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="delivery" TYPE="int" LENGTH="3" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="requiredtime" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="type" TYPE="char" LENGTH="50" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+        <FIELD NAME="orientation" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+        <FIELD NAME="width" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+        <FIELD NAME="height" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+        <FIELD NAME="backgroundimage" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for certificate"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="random_data" COMMENT="Defines randoms">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true"/>
+        <FIELD NAME="moduleid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" DEFAULT="0" />
+        <FIELD NAME="question" TYPE="text" LENGTH="255" NOTNULL="true" SEQUENCE="false" DEFAULT="0"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0"/>
+        <FIELD NAME="took" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" DEFAULT="0"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id" COMMENT="Primary key for random"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
